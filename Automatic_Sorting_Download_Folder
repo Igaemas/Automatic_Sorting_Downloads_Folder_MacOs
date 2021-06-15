@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+
+# module os pour agir sur l'os
+import os
+import shutil
+
+#répertoire dossier téléchargement
+download_folder = "/Users/Username/Downloads"
+
+#répertoires de destination
+audio = "/Users/Username/Downloads/folder/audio"
+comp = "/Users/Username/Downloads/folder/compresse"
+excel = "/Users/Username/Downloads/folder/excel"
+img = "/Users/Username/Downloads/folder/images"
+instal = "/Users/Username/Downloads/folder/installeur"
+java = "/Users/Username/Downloads/folder/java"
+pdf = "/Users/Username/Downloads/folder/pdf"
+powerpoint = "/Users/Username/Downloads/folder/powerpoint"
+texte = "/Users/Username/Downloads/folder/texte"
+video = "/Users/Username/Downloads/folder/video"
+
+print("-- Automatic_Sorting_Download_Folder --")
+
+# boucle pour trier
+for filename in os.listdir(download_folder):
+    if filename.endswith(".pdf"):
+        shutil.move("/Users/Username/Downloads/" + filename, pdf)
+        print(filename + " a été deplacé dans PDF")
+    elif filename.endswith(".mp3") or filename.endswith(".wav"):
+        shutil.move("/Users/Username/Downloads/" + filename, audio)
+        print(filename + " a été deplacé dans AUDIO")
+    elif filename.endswith(".zip") or filename.endswith(".rar"):
+        shutil.move("/Users/Username/Downloads/" + filename, comp)
+        print(filename + " a bien été deplacé dans COMPRESSE")
+    elif filename.endswith(".excel") or filename.endswith(".xlsm"):
+        shutil.move("/Users/Username/Downloads/" + filename, excel)
+        print(filename + " a bien été deplacé dans EXCEL")
+    elif filename.endswith(".jpg") or filename.endswith(".png") or filename.endswith(".gif"):
+        shutil.move("/Users/Username/Downloads/" + filename, img)
+        print(filename + " a bien été deplacé dans IMAGES")
+    elif filename.endswith(".dmg"):
+        shutil.move("/Users/Username/Downloads/" + filename, instal)
+        print(filename + " a bien été deplacé dans INSTALLEUR")
+    elif filename.endswith(".jar"):
+        shutil.move("/Users/Username/Downloads/" + filename, java)
+        print(filename + " a bien été deplacé dans JAVA")
+    elif filename.endswith(".pptx"):
+        shutil.move("/Users/Username/Downloads/" + filename, powerpoint)
+        print(filename + " a bien été deplacé dans POWERPOINT")
+    elif filename.endswith(".txt") or filename.endswith("docx") or filename.endswith(".doc"):
+        shutil.move("/Users/Username/Downloads/" + filename, texte)
+        print(filename + " a bien été deplacé dans TEXTE")
+    elif filename.endswith(".mp4") or filename.endswith(".avi") or filename.endswith(".mkv"):
+        shutil.move("/Users/Username/Downloads/" + filename, video)
+        print(filename + " a bien été deplacé dans VIDEO")
+    else:
+        print("Ce fichier n'est pas triable.")
+print("trie terminé !")
