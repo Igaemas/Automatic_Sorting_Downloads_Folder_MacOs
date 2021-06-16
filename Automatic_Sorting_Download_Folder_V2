@@ -23,7 +23,9 @@ py = "/Users/igeamas/Downloads/folder/python"
 
 print("-- Automatic_Sorting_Download_Folder --")
 # Creer le dossier "folder" ou seront deposé les fichiers triés s'il n'existe pas
-if os.path.exists("/Users/igeamas/Downloads/folder") == False:
+if os.path.isdir("/Users/igeamas/Downloads/folder"):
+    print("Le dossier existe déja")
+else:
     os.mkdir("/Users/igeamas/Downloads/folder")
 
 # Pour chaque fichier du dossier "téléchargement"
